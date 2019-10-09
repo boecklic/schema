@@ -17,7 +17,46 @@ module.exports = {
       enum: ['Feature']
     },
     properties: {
-      oneOf: [{type: 'null'}, {type: 'object'}]
+      type: "object",
+      title: "The Properties Schema",
+      required: [
+        "layerid",
+        "minzoom",
+        "maxzoom",
+        "class"
+      ],
+      properties: {
+        layerid: {    
+          type: "string",
+          title: "The Layerid Schema",
+          examples: [
+            "aerialway-name"
+          ],
+          pattern: "^(.*)$"
+        },
+        minzoom: {    
+          type: "string",
+          title: "The Minzoom Schema",
+          examples: [
+            "13"
+          ]
+        },
+        maxzoom: {    
+          type: "string",
+          title: "The Maxzoom Schema",
+          examples: [
+            "17"
+          ]
+        },
+        class: {    
+          type: "string",
+          title: "The Class Schema",
+          examples: [
+            "drag_lift"
+          ],
+          pattern: "^(.*)$"
+        }
+      }
     },
     geometry: {
       oneOf: [
